@@ -9,4 +9,8 @@ export class CreateTaskDto {
   @IsString()
   @IsNotEmpty({ message: 'Description is required' })
   description: string;
+
+  @IsString()
+  @IsNotEmpty()
+  uuid: string;
 }

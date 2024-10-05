@@ -2,7 +2,6 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  Generated,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
@@ -11,8 +10,7 @@ export class Task {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ unique: true })
-  @Generated('uuid')
+  @Column()
   uuid: string;
 
   @Column()

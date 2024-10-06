@@ -2,8 +2,11 @@ import { TaskService } from './task.service';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { TaskRepositoryResponse } from './interfaces/userRepoResponse';
 import { Controller, Post, Get, Param, Query, Body } from '@nestjs/common';
+import { UseGuards } from '@nestjs/common';
+import { JwtGuard } from 'src/common/gaurd/auth.gaurd';
 
 @Controller('task')
+@UseGuards(JwtGuard)
 export class TaskController {
   constructor(private readonly taskService: TaskService) {}
 
